@@ -1,0 +1,142 @@
+#main{
+    font-family: verdana;
+    color: white;
+}
+#Titlelogo {
+    background-color: #9A61AB;
+    width: 19%;
+    height: 20%;
+    border: none;
+    float: left;
+    display: block;
+}
+#navibar{
+    background-color: #9A61AB;
+    width: 60%;
+    height: 20%;
+    border: none;  
+    float: left;
+    display: block;
+}
+#profile{
+    background-color: #9A61AB;
+    width: 20%;
+    height: 20%;
+    border: none;  
+    float: right;
+    display: block;
+}
+#player {
+    background-color:  #555;
+    width: 100%;
+    height: 20%;
+    color:white;
+   border: none;
+    float: left;
+    display: block;
+}
+#recom{
+    background-color: #7C3F8D;
+    width: 19%;
+    height: 60%;
+   border: none;
+    float:left;
+    clear:both;
+    display: block;
+}
+#mainscreen{
+    background-color: #C498D1;
+    background-image: url("asset/Pictures/msbg.jpg");
+     background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    width: 80%;
+    height: 60%;
+    float:left;
+    display: block;
+}
+#mainscreen_pl{
+    background-color: #C498D1;
+     background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    width: 100%;
+    height: 100%;
+    border: none;
+    clear:both;
+    float:left;
+    display: block;
+}
+#mainscreenmm{
+    background-color: #C498D1;
+    background-image: url("asset/Pictures/msbg.jpg");
+     background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    width: 100%;
+    height: 80%;
+    border: none;
+	clear:both;
+    float:left;
+    display: block;
+}
+#navibarmm{
+	 background-color: #9A61AB;
+    width: 80%;
+    height: 20%;
+    border: none;  
+    float: left;
+    display: block;
+}
+
+footer{
+    background-color: #7C3F8D;
+    width: 100%;
+    height: 20%;
+    border: none;
+    float: left;
+    clear:both;
+}
+#navibar1{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#navibar1 li {
+    float:left;
+}
+#navibar1 li a{
+    height: 100%;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+}
+#navibar1 li a.active {
+    background-color:#634691 ;
+    color: white;
+}
+
+#navibar1 li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+#Playlist{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#Playlist li a{
+    height: 100%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+#Playlist li.current-song {
+    background-color:#634691 ;
+    color: white;
+}
+
+#Playlist li:hover:not(.current-song) {
+    background-color: #555;
+    color: white;
+}
+
