@@ -2,7 +2,7 @@
 
 $host_name = "localhost";
 $user_name="root";
-$password="12345";
+$password="";
 $database_name= "mixtape";
 
 $conn = mysqli_connect( $host_name , $user_name , $password , $database_name) ;
@@ -36,6 +36,25 @@ if (!$conn)
 	    $result = mysqli_query($conn , $query) ; // result set er moddhe rakha holo ;
 		$row = mysqli_fetch_assoc($result);
 		return $row ;
+	}
+
+	function all_playlist_of_a_user_as_result_set ( $user_id )
+	{
+		global $conn ; // database er sathe connection hoilo 
+        
+		$query =" SELECT playlist_id , playlist_name FROM playlist where user_id =\"".$user_id."\" " ;
+		
+		$result = mysqli_query($conn , $query) ;
+		if ( $result == true )
+		{
+		   return $result ;
+	    }
+		//return $row ;
+         
+         else
+         {
+         	echo " result ase nai " ;
+         }
 	}
  
 
