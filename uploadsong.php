@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
 
 
 
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +61,7 @@ if ($uploadOk == 0) {
 </head>
 <body align="center">
 	
-	<p> click here to upload songs </p>
+	<h1> click here to upload songs </h1>
 	<form method="POST" action=" <?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data">
 	<input type="file" name="fileToUpload" accept=" .mp3 , audio/* ">
 	<br/>

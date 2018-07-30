@@ -20,6 +20,11 @@
     <li>
         <a href="#Settings" onclick="parent.framechange('Side_nav.php','Settings.php');">Settings</a>
         </li>
+
+        <li>
+        <a href="#Add_Songs" onclick="parent.framechange('Side_nav.php','uploadsong.php');">Add Songs</a>
+        </li>
+
 </ul>
  </body>
  </html>
