@@ -1,4 +1,6 @@
 <?php
+$validate ="" ;
+$error ="" ;
 if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST")
 {
 $target_dir = "uploads/";//here the directory is already created manually
@@ -20,7 +22,7 @@ if(isset($_POST["submit"])) {
 */
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
+    $error = "Sorry, file already exists.<br/>";
     $uploadOk = 0;
 }
 // Check file size
@@ -37,14 +39,14 @@ if ($_FILES["fileToUpload"]["size"] > 4000000000) {
 // Check if $uploadOk is set to 0 by an error
   require ("dbconnection.php");
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    $error .=" Sorry, your file was not uploaded. <br/>";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && insert_a_song( basename( $_FILES["fileToUpload"]["name"]),$target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. <br/>";
+        $validate= "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. <br/>";
        // echo "<img src=\"".$target_file."\" width =200  height =200 >" ;
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        $error .= " Sorry, there was an error uploading your file.";
     }
 }
 }
@@ -61,13 +63,18 @@ if ($uploadOk == 0) {
 </head>
 <body align="center">
 	
-	<h1> click here to upload songs </h1>
+	<h1> Click here to upload songs </h1>
 	<form method="POST" action=" <?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data">
 	<input type="file" name="fileToUpload" accept=" .mp3 , audio/* ">
 	<br/>
-	<input type="submit" name="submitb" value="click">
+    <br/>
+	<input type="submit" name="submitb" value="upload" style="height: 30px ; width: 80px">
 		
 	</form>
+
+    <span> <b><?php echo $error ?> </b></span>
+    <br/>
+    <span><h2><?php echo $validate ?> </h2></span>
 
 
 </body>
