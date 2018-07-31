@@ -25,10 +25,10 @@
 			<div id="Titlelogo" align="center">
 	  			<a href="Home.php"><img src="asset/Pictures/Mixtapelogo.png" alt="Home" height=100% width=100%></a>
 			</div>		
-			<div id="navibar" align="center">
+			<div id="navibar" align="center"> <!-- navi bar er moddhe suggestion , collection and trend menu ase -->
 				<?php require 'Navibar.php';?>
 			</div>
-			<div id="profile" align="center">			
+			<div id="profile" align="center">		<!-- Account_Nav er moddhe  profile ta ase  -->	
 				<?php require 'Account_nav.php';?>
 			</div>
 	        <div id="recom" align="center">
