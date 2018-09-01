@@ -105,6 +105,7 @@ if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 		 else
 		 {
 			 $_SESSION["userName"] = $uname ;
+			 $_SESSION["user_id"] = $uname ;
 			 header("location:home.php");
 		 }
 	 }

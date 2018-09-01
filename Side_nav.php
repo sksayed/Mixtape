@@ -12,7 +12,7 @@
     </div>
  <ul id="navibar1">
     <li>
-        <a href="#Add_playlist" onclick="parent.framechange('Side_nav.php','Add_playlist.php');">Add Playlist</a> 
+        <a href="#Add_playlist" onclick="parent.framechange('Side_nav.php','create_playlist.php');">Add Playlist</a> 
     </li>
     <li>  
         <a href="#Account_info" onclick="parent.framechange('Side_nav.php','Account_info.php');">Account Info</a>
