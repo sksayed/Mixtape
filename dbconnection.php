@@ -112,6 +112,56 @@ if (!$conn)
 		return $row ;
 
     }
+    function all_songs_resultset ()
+    {
+    	
+    	global $conn ; // database er sathe connection hoilo 
+        
+		$query ="SELECT * from song  " ;
+		
+		$result = mysqli_query($conn , $query) ;
+		if ( $result == true )
+		{
+		   return $result ;
+	    }
+		//return $row ;
+         
+         else
+         {
+         	echo " result ase nai " ;
+         }
+
+    }
+    function create_a_playList ( $playlist_name , $user_id  )
+    {
+    	global $conn ;
+
+    	$query =" INSERT INTO `playlist` (`playlist_id`, `playlist_name`, `user_id`) VALUES (NULL,\"".$playlist_name."\" ,\"".$user_id."\"); " ;
+    	$result = mysqli_query($conn , $query);
+
+    	if ($result == true)
+    	{
+    		$query ="SELECT playlist_id FROM playlist ORDER BY playlist_id DESC LIMIT 1 ";
+    		$result =mysqli_query($conn , $query);
+    		$value = mysqli_fetch_assoc($result);
+
+    		return $value["playlist_id"] ;
+
+    	}
+    	else
+    	{
+    		return -1 ;
+    	}
+
+    }
+    function insert_into_playlist_songs ( $playlist_id , $song_id)
+    {
+    	global $conn ;
+    	$query ="  INSERT INTO `playlist_songs` (`playlist_id`, `song_id`) VALUES (\"".$playlist_id."\", \"".$song_id."\");  " ;
+    	$result =  mysqli_query($conn , $query);
+    	
+    }
+
 
 
 
