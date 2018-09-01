@@ -22,7 +22,7 @@
         </li>
 
         <li>
-        <a href="#Add_Songs" onclick="parent.framechange('Side_nav.php','uploadsong.php');">Add Songs</a>
+        <a href="#Add_Songs" onclick="parent.framechange('Side_nav.php','uploadsong.php');">Add Songss</a>
         </li>
 
 </ul>

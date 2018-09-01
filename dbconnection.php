@@ -112,6 +112,26 @@ if (!$conn)
 		return $row ;
 
     }
+    function all_songs_resultset ()
+    {
+    	
+    	global $conn ; // database er sathe connection hoilo 
+        
+		$query ="SELECT * from song  " ;
+		
+		$result = mysqli_query($conn , $query) ;
+		if ( $result == true )
+		{
+		   return $result ;
+	    }
+		//return $row ;
+         
+         else
+         {
+         	echo " result ase nai " ;
+         }
+
+    }
 
 
 
