@@ -29,10 +29,13 @@ require ("dbconnection.php");
 	}
 	
 }
+ //echo "ekhane asche 1 "; 
+$sl=$_GET['sl'];
 $all_true = false ;
 $name=$nameErr="";
-if (isset($_POST["namesubmit"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
-{   
+if (isset($_POST["namesubmit"])  )
+{  
+    // echo "ekhane asche 2"; 
 
 
 	if (empty($_POST["plname"]))
@@ -61,8 +64,12 @@ if (isset($_POST["namesubmit"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 
 		 if (!$all_true && !empty($_POST["plname"]))
 		 {
-		 	
 
+		 	
+		 	update_pl_name($sl, $name ) ;
+		 	header("location:Profile.php");
+
+ 
 
 
 		 }
@@ -96,8 +103,9 @@ if (isset($_POST["namesubmit"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 	</style>
 </head>
 <body>
-<table>
 	<form method="POST" action="">
+<table>
+	
 		
 	
 	<tr>
@@ -110,8 +118,8 @@ if (isset($_POST["namesubmit"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 	<tr>
 		<td>
 			<?php
-			$sl=$_GET['sl'];
-			 echo "<a href='Remove_songs.php?serial=".$sl."'>Remove songs</a>";
+			
+			 echo "<a href=\"Remove_songs.php?serial=".$sl."\">Remove songs</a>";
 			?>
 		</td>
 	</tr>
@@ -120,12 +128,13 @@ if (isset($_POST["namesubmit"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 			<?php
 			   // <a href="Add_songs.php">Add Songs</a>
 
-			echo "<a href='Add_songs.php?serial=".$sl."'> Add songs</a>"
+			echo "<a href=\"Add_songs.php?serial=".$sl."\"> Add songs</a>"
 
 			?>
 		</td>
 	</tr>
-</form>
+
 </table>
+ </form>
 </body>
 </html>
