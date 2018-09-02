@@ -2,7 +2,7 @@
   session_start() ;
   require ("dbconnection.php");
     $account_name=""; 
-   if ($_SESSION["userName"] )
+   if ($_SESSION["userName"]  )
    { //jodi session e kono user name thake 
 	   $user = all_values_of_a_user ($_SESSION["userName"] ) ;
 	   $account_name= $user["name"];

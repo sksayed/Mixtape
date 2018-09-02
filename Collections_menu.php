@@ -18,6 +18,28 @@
     	<title>
     		Mixtape.com|Collections
     	</title>
+      <style type="text/css">
+    .pl {
+            background-color: #eee;
+            color: #444;
+            padding: 18px;
+            width: 90%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 25px;
+        }
+        .pl a{
+            text-decoration: none;
+        }
+        .pl:hover {
+            background-color: #ccc; 
+        }
+        .plst{
+            list-style-type: none;
+            align-content: left;
+        }
+  </style>
         <link rel="stylesheet" type="text/css" href="Mixtape.css">
     </head> 
     <body align="center" style="background-color:#9A61AB;">
@@ -28,8 +50,23 @@
 			    <td style="color: #7C3F8D"><h2>Collections</h2></td>
 			  </tr>
 			  <tr>
-			    <td><iframe src="Playlist_list.html" style="border:none;height:100%;width:100%;"></iframe></td>
-			  </tr>
+          <td>
+            <?php 
+            $playlist=allplaylist();
+            if (mysqli_num_rows($playlist) > 0) {
+            echo "<ul class='plst' align='left'>";
+            $sl = 1 ;
+            while ($row = mysqli_fetch_assoc( $playlist) )
+          {
+           # code...
+        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a></li>";
+        $sl++ ;
+       } // for loop ses 
+       echo "</ul>";
+   } // if condition ses 
+?>
+          </td>   
+        </tr>
 			</table>
     	</div>
     </div>

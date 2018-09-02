@@ -20,11 +20,16 @@
     <li>
         <a href="#Settings" onclick="parent.framechange('Side_nav.php','Settings.php');">Settings</a>
         </li>
-
-        <li>
-        <a href="#Add_Songs" onclick="parent.framechange('Side_nav.php','uploadsong.php');">Add Songss</a>
-        </li>
-
+    <?php
+        session_start();
+        require("dbconnection.php");
+       $user = all_values_of_a_user ($_SESSION["user_id"] ) ;
+       $account_type= $user["type"];
+        if($account_type=='admin')
+            {echo "<li>
+        <a href='#Add_Songs' onclick=\"parent.framechange('Side_nav.php','uploadsong.php');\">Add Songs</a>
+        </li>";}
+?>
 </ul>
  </body>
  </html>

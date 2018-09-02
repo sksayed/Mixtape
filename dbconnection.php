@@ -136,7 +136,7 @@ if (!$conn)
     {
     	global $conn ;
 
-    	$query =" INSERT INTO `playlist` (`playlist_id`, `playlist_name`, `user_id`) VALUES (NULL,\"".$playlist_name."\" ,\"".$user_id."\"); " ;
+    	$query =" INSERT INTO `playlist` (`playlist_id`, `playlist_name`, `user_id`,`hits`) VALUES (NULL,\"".$playlist_name."\" ,\"".$user_id."\", '0' ); " ;
     	$result = mysqli_query($conn , $query);
 
     	if ($result == true)
@@ -161,8 +161,57 @@ if (!$conn)
     	$result =  mysqli_query($conn , $query);
     	
     }
+    function delete_a_playlist ($playlist_id)
+    {
+    	global $conn ;
+    	$query =" DELETE FROM `playlist` WHERE `playlist_id` = ".$playlist_id." ";
+    	$result = mysqli_query($conn , $query);
+    	if ($result == true)
+    	{
+    		 header("Location:Playlist_handling.php");
+    	}
+    	else
+    	{
+    		echo "kaj hoi nai ";
+    	} 
 
+    }
 
+    function incrementhits($playlist_id,$hits)
+    {
+      global $conn;
+      $query="UPDATE `playlist` SET `hits` = '".$hits."' WHERE `playlist`.`playlist_id` = ".$playlist_id;
+      $result=mysqli_query($conn,$query);
+    }
+    function s($song_id)
+    {
+      global $conn;
+      $query = "SELECT * FROM song where song_id =\"".$song_id."\" ;";
+      $result = mysqli_query($conn , $query) ; // result set er moddhe rakha holo ;
+    $row = mysqli_fetch_assoc($result);
+    return $row ;
+    }
 
+    function incrementsonghits($song_id,$hits)
+    {
+      global $conn;
+      $query="UPDATE `song` SET `hits` = '".$hits."' WHERE `song`.`song_id` = ".$song_id;
+      $result=mysqli_query($conn,$query);
+    }
+    function allplaylist()
+    {
+      global $conn;
+      $query="SELECT * FROM `playlist`";
+      $result=mysqli_query($conn,$query);
+      return $result;
+    }
 
+    function trendingpl()
+    {
+      global $conn;
+      $query="SELECT * FROM `playlist` ORDER BY `hits` DESC LIMIT 5";
+      $result=mysqli_query($conn,$query);
+      return $result;
+
+    }
 ?>
