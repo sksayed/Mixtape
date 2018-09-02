@@ -230,4 +230,42 @@ if (!$conn)
       $result=mysqli_query($conn,$query);
 
     }
+
+    function update_user_id ($user_id , $update_user_id)
+    {
+      global $conn ;
+      $query="UPDATE `user` SET `user_id` = '".$update_user_id."' WHERE `user`.`user_id` = '".$user_id."';";
+      $result=mysqli_query($conn,$query);
+
+    }
+    function update_user_name ($user_id , $update_user_name)
+    {
+      global $conn ;
+      $query="UPDATE `user` SET `name` = '".$update_user_name."' WHERE `user`.`user_id` = '".$user_id."';";
+      $result=mysqli_query($conn,$query);
+      if ($result == true )
+      {
+        echo " updated" ;
+      }
+      else
+      {
+        echo "not updated";
+      }
+
+    }
+    function update_user_email($user_id , $update_user_email)
+    {
+      global $conn ;
+      $query="UPDATE `user` SET `email` = '".$update_user_email."' WHERE `user`.`user_id` = '".$user_id."';";
+      $result=mysqli_query($conn,$query);
+      if ($result == true )
+      {
+        echo " updated" ;
+      }
+      else
+      {
+        echo "not updated";
+      }
+
+    }
 ?>
