@@ -237,13 +237,12 @@ if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
     </head> 
     <body align="center" style="background-color:#9A61AB;">
     <div id="main" align="center">
-<div id="Titlelogo" align="center"><a href="Home.html"><img src="asset/Pictures/Mixtapelogo.png" alt="Home" height=100% width=100%></a></div>		
+<div id="Titlelogo" align="center"><a href="Home.php"><img src="asset/Pictures/Mixtapelogo.png" alt="Home" height=100% width=100%></a></div>		
 <div id="navibarmm" align="center">
 			<nav>
 				<ul id="navibar1">
-					<li><a href="Collections_menu.html"><h2>Collections</h2></a></li>
-					<li><a href="Playlist_menu.html"><h2>Playlists</h2></a></li>
-					<li><a href="Trending_menu.html"><h2>Trending</h2></a></li>
+					<li><a href="Collections_menu.php"><h2>Collections</h2></a></li>
+					<li><a href="Trending_menu.php"><h2>Trending</h2></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -323,7 +322,6 @@ if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 				</tr>
 				<tr>
 					<td>
-					
 					</td>
 				</tr>
 				</table>
