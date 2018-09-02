@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2018 at 07:50 PM
+-- Generation Time: Sep 03, 2018 at 01:33 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -32,18 +32,21 @@ CREATE TABLE `playlist` (
   `playlist_id` int(5) NOT NULL,
   `playlist_name` varchar(100) NOT NULL,
   `user_id` varchar(15) NOT NULL,
-  `hits` int(10) NOT NULL DEFAULT '0'
+  `hits` int(10) NOT NULL DEFAULT '0',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `playlist`
 --
 
-INSERT INTO `playlist` (`playlist_id`, `playlist_name`, `user_id`, `hits`) VALUES
-(3, 'sayed\'s_playList', 'sayed1122', 10),
-(4, 'sayed\'s_playList', 'sayed1122', 0),
-(28, 'kjhkgj', 'bazoo123', 1),
-(29, 'hgfhdh', 'bazoo123', 6);
+INSERT INTO `playlist` (`playlist_id`, `playlist_name`, `user_id`, `hits`, `create_time`) VALUES
+(4, 'sayed\'s_playList', 'sayed1122', 12, '2018-09-02 21:26:01'),
+(28, 'kjhkgj', 'bazoo123', 2, '2018-09-02 21:26:01'),
+(29, 'hgfhdh', 'bazoo123', 6, '2018-09-02 21:26:01'),
+(30, 'my pl', 'sayed1122', 16, '2018-09-02 21:26:01'),
+(31, 'dwqewqe', 'sayed1122', 0, '2018-09-02 21:26:43'),
+(32, 'sayed', 'sayed1122', 0, '2018-09-02 22:35:58');
 
 -- --------------------------------------------------------
 
@@ -61,8 +64,9 @@ CREATE TABLE `playlist_songs` (
 --
 
 INSERT INTO `playlist_songs` (`playlist_id`, `song_id`) VALUES
-(3, '1'),
 (3, '4'),
+(3, '6'),
+(3, '7'),
 (16, '1'),
 (19, '1'),
 (19, '2'),
@@ -96,7 +100,11 @@ INSERT INTO `playlist_songs` (`playlist_id`, `song_id`) VALUES
 (26, '2'),
 (26, '3'),
 (27, '4'),
-(28, '1');
+(28, '1'),
+(30, '5'),
+(30, '9'),
+(32, '8'),
+(32, '9');
 
 -- --------------------------------------------------------
 
@@ -190,7 +198,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `playlist_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `playlist_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `song`

@@ -44,7 +44,7 @@
 	</nav>
 	</div>
 	<div align="right" style="padding: 50px 0px 0px 0px">
-		<img src="asset/Pictures/search.png" alt="search" height=10% width=5%>
+		<a href="#Search_menu"  onclick="var s=document.getElementById('search').value; framechange('Recommended.php','Search_menu.php?input=`$s`');"><img src="asset/Pictures/search.png" alt="search" height=10% width=5%></a>
 		<input id="search" type="text" height="100%" width="100%" placeholder="Search Playlists.." onkeyup ="getData(this.value)">
 		<div id="sug" style="background-color:white;color:black;width:170px" align="left"></div>
 	</div>
