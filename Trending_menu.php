@@ -18,10 +18,10 @@
     	<title>
     		Mixtape.com|Trending
     	</title>
-      <style type="text/css">
+     <style type="text/css">
     .pl {
-            background-color: #eee;
-            color: #444;
+            background-color: #A669DA;
+            color: #FFFFFF;
             padding: 18px;
             width: 90%;
             border: none;
@@ -33,7 +33,7 @@
             text-decoration: none;
         }
         .pl:hover {
-            background-color: #ccc; 
+            background-color: #B4A3C2; 
         }
         .plst{
             list-style-type: none;
@@ -42,7 +42,7 @@
   </style>
         <link rel="stylesheet" type="text/css" href="Mixtape.css">
     </head> 
-    <body align="center" style="background-color:#9A61AB;">
+    <body align="center">
     <div id="main" align=center>
         <div id="mainscreen_pl" align="center">
         	<table width=100% height=50%>
