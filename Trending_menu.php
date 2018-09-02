@@ -18,9 +18,31 @@
     	<title>
     		Mixtape.com|Trending
     	</title>
+     <style type="text/css">
+    .pl {
+            background-color: #A669DA;
+            color: #FFFFFF;
+            padding: 18px;
+            width: 90%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 25px;
+        }
+        .pl a{
+            text-decoration: none;
+        }
+        .pl:hover {
+            background-color: #B4A3C2; 
+        }
+        .plst{
+            list-style-type: none;
+            align-content: left;
+        }
+  </style>
         <link rel="stylesheet" type="text/css" href="Mixtape.css">
     </head> 
-    <body align="center" style="background-color:#9A61AB;">
+    <body align="center">
     <div id="main" align=center>
         <div id="mainscreen_pl" align="center">
         	<table width=100% height=50%>
@@ -36,7 +58,7 @@
             while ($row = mysqli_fetch_assoc( $playlist) )
           {
            # code...
-        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a></li>";
+        echo "<li class='pl' align='left'><div align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."<h6> by ".$row['user_id']."</h6></a></div><div align='right'>hits:".$row["hits"]."</div></li>";
         $sl++ ;
        } // for loop ses 
        echo "</ul>";

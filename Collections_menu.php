@@ -18,10 +18,10 @@
     	<title>
     		Mixtape.com|Collections
     	</title>
-      <style type="text/css">
+    <style type="text/css">
     .pl {
-            background-color: #eee;
-            color: #444;
+            background-color: #A669DA;
+            color: #FFFFFF;
             padding: 18px;
             width: 90%;
             border: none;
@@ -33,7 +33,7 @@
             text-decoration: none;
         }
         .pl:hover {
-            background-color: #ccc; 
+            background-color: #B4A3C2; 
         }
         .plst{
             list-style-type: none;
@@ -42,7 +42,7 @@
   </style>
         <link rel="stylesheet" type="text/css" href="Mixtape.css">
     </head> 
-    <body align="center" style="background-color:#9A61AB;">
+    <body align="center">
     <div id="main" align=center>
         <div id="mainscreen_pl" align="center">
         	<table width=100% height=100%>
@@ -59,7 +59,7 @@
             while ($row = mysqli_fetch_assoc( $playlist) )
           {
            # code...
-        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a></li>";
+        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a> <h6 align='right'>created:".$row["create_time"]."</h6></li>";
         $sl++ ;
        } // for loop ses 
        echo "</ul>";
