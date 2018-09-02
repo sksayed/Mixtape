@@ -214,4 +214,20 @@ if (!$conn)
       return $result;
 
     }
+
+
+    function update_pl_name($playlist_id, $playlist_name )
+    {
+      global $conn ;
+      $query="UPDATE `playlist` SET `playlist_name` = '".$playlist_name."' WHERE `playlist`.`playlist_id` = ".$playlist_id;
+       $result=mysqli_query($conn,$query);
+    }
+    function delete_a_song_from_playlist ($playlist_id, $song_id)
+    {
+      global $conn ;
+
+      $query="DELETE FROM `playlist_songs` WHERE `playlist_songs`.`playlist_id` = ".$playlist_id ." AND `playlist_songs`.`song_id` = ".$song_id;
+      $result=mysqli_query($conn,$query);
+
+    }
 ?>
