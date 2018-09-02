@@ -1,3 +1,11 @@
+<?php
+require("dbconnection.php");
+$id=$_GET["serial"] ;
+$playlist=p($id);
+$v=$playlist['hits'];
+$v++;
+incrementhits($id,$v);
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +49,7 @@
 		<?php
 		require("mp3file.class.php");
 			
-        require("dbconnection.php");
+        //require("dbconnection.php");
 
            $pl_id = $_GET["serial"] ;
            //echo $pl_id ;
@@ -66,7 +74,7 @@
 			 				$dur=MP3File::formatTime($duration2);
 			 			
 			 			
-			 echo "<li class='current-song'><a id='".$name." - ".$dur."' href='".$a["song_path"]."'>".$s.") ".$a["song_name"]." - ".$dur."</a></li>";
+			 echo "<li class='current-song'><a id='".$name."' href='".$a["song_path"]."'>".$s.") ".$a["song_name"]." - ".$dur."</a></li>";
 			 			
 			 			
 			 			
@@ -129,6 +137,7 @@
 			<script>
 				audioPlayer();
 				function audioPlayer(){
+         
             var currentSong = 0;
             $("#audioPlayer")[0].src = $("#Playlist li a")[0];
             $("#audioPlayer")[0].play();

@@ -62,7 +62,7 @@ if (!$conn)
 		global $conn ;
 
 		$query = "INSERT INTO `song` (`song_id`, `song_name`, `song_path`) VALUES (NULL, \"".$song_name."\", \"".$song_path."\"); " ;
-		echo $query ;
+		//echo $query ;
 		if (mysqli_query($conn, $query)) 
 		{
     		//echo "New record created successfully";
@@ -160,6 +160,12 @@ if (!$conn)
     	$query ="  INSERT INTO `playlist_songs` (`playlist_id`, `song_id`) VALUES (\"".$playlist_id."\", \"".$song_id."\");  " ;
     	$result =  mysqli_query($conn , $query);
     	
+    }
+
+    function update_playList_name ($playlist_id ,$playlist_name)
+    {
+    	
+
     }
 
 

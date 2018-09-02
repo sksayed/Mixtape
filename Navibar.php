@@ -43,7 +43,7 @@
 	<div align="right" style="padding: 50px 0px 0px 0px">
 		<img src="asset/Pictures/search.png" alt="search" height=10% width=5%>
 		<input id="search" type="text" height="100%" width="100%" placeholder="Search Playlists.." onkeyup="getData(this.value)">
-		<div id="sug" style="background-color:white;color:black;width:170px"></div>
+		<div id="sug" style="background-color:white;color:black;width:170px" align="left"></div>
 	</div>
 </body>
 </html>

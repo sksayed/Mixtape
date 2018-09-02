@@ -46,6 +46,9 @@ session_start() ; // session start hoise karon validation korbo
 	</style>
 </head>
 <body>
+  <div style="clear: both; color: white ; width: 100%;">
+        <h2>Your Playlists</h2>
+  </div>
 	<?php
     require ("dbconnection.php"); 
 	//$sl=0;
@@ -58,7 +61,7 @@ session_start() ; // session start hoise karon validation korbo
           while ($row = mysqli_fetch_assoc( $playlist) )
           {
            # code...
-        echo "<li class='pl' align='left'>".$sl.") <a href='Playlist_viewing.php?serial=".$row["playlist_id"]."' target='_parent'>".$row["playlist_name"]."</a></li>";
+        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]." </a><a href='Delete_pl.php?sl=".$row["playlist_id"]."'><img src='uploads/delete.png' height=2% width =3%></img></a><a href='Manage_playlist.php?sl=".$row["playlist_id"]."'><img src='uploads/manage.png' height=2% width =3%></img></a></li>";
         $sl++ ;
        } // for loop ses 
        echo "</ul>";
@@ -78,5 +81,31 @@ session_start() ; // session start hoise karon validation korbo
 	echo "</ul>";
     */
 ?>
+<script type="text/javascript">
+/*
+  function update(val ) {
+    if (val =="")
+    {
+      alert("no values found") ;
+    }
+    else
+    {
+
+      var xmlhttp = XMLHttpRequest () ;
+      xmlhttp.onreadystatechange = function ()
+      {
+        if (this.readyState == 4 && this.status == 200 )
+        {
+
+        }
+      };
+
+      xmlhttp.open ("GET" , "pl_hits.php?p="+val,true);
+      xmlhttp.send ();
+
+    }
+  }
+  */
+</script>
 </body>
 </html>

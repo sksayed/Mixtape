@@ -27,9 +27,22 @@
 			  <tr>
 			    <td style="color: #7C3F8D"><h2>Trending</h2></td>
 			  </tr>
-			  <tr>
-			    <td>
- </td>
+			  <tr> <td>
+            <?php 
+            $playlist=trendingpl();
+            if (mysqli_num_rows($playlist) > 0) {
+            echo "<ul class='plst' align='left'>";
+            $sl = 1 ;
+            while ($row = mysqli_fetch_assoc( $playlist) )
+          {
+           # code...
+        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a></li>";
+        $sl++ ;
+       } // for loop ses 
+       echo "</ul>";
+   } // if condition ses 
+?>
+          </td>   
 			  </tr>
 			</table>
     	</div>
