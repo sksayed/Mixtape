@@ -71,17 +71,10 @@ incrementhits($id,$v);
 			 			$name=$a["song_name"]; // file name 
 			 				$mp3file = new MP3File($a["song_path"]);//song path 
 			 				$duration2 = $mp3file->getDuration();
-			 				$dur=MP3File::formatTime($duration2);
-			 			
-			 			
-			 echo "<li class='current-song'><a id='".$name." - ".$dur."' href='".$a["song_path"]."'>".$s.") ".$a["song_name"]." - ".$dur."</a></li>";
-			 			
-			 			
-			 			
+			 				$dur=MP3File::formatTime($duration2);			
+			 echo "<li class='current-song'><a id='".$name." - ".$dur."' href='".$a["song_path"]."'>".$s.") ".$a["song_name"]." - ".$dur."</a></li>"; 			
 			 $s++;				
-			 			
            	 }
-
            }
            else
            {
@@ -89,48 +82,6 @@ incrementhits($id,$v);
            	echo "<h2>".$playlist["playlist_name"]."</h2>";
            	 echo "<h1>no song in this play list </h1>" ;
            }
-
-
-
-
-
-
-
-
-
-		/*	$sl=0;
-			
-			foreach(glob('uploads/*', GLOB_ONLYDIR) as $dir) //sob gula directory nise 
-			{
-				$dirname = basename($dir); //eta dir er name 
-				if($_GET['serial']==$sl) //playlist ID
-				{
-					echo "<h2>".$dirname."</h2>";// eta hobe playlist name 	
-					echo "<ul id='Playlist' align='left'>";
-					$a=array_slice(scandir($dir),2) ; // er moddhe dir er sob gaan rakha hoise 
-					$s="";
-					for ($i=0; $i<count($a) ; $i++) 
-			 		{   
-			 			$path_parts = pathinfo($a[$i]);
-			 			$name=$path_parts['basename']; // file name 
-			 				$mp3file = new MP3File("uploads/".$dirname."/".$a[$i]);//song path 
-			 				$duration2 = $mp3file->getDuration();
-			 				$dur=MP3File::formatTime($duration2);
-			 			$s=$i+1;
-			 			if($i==0)
-			 			{
-			    			echo "<li class='current-song'><a id='".$name." - ".$dur."' href='uploads/".$dirname."/".$a[$i]."'>".$s.") ".$a[$i]." - ".$dur."</a></li>";
-			 			}
-			 			else
-			 			{
-			 				echo "<li><a id='".$name." - ".$dur."' href='uploads/".$dirname."/".$a[$i]."'>".$s.") ".$a[$i]." - ".$dur."</a></li>";
-			 			}
-			 		}
-			 		echo "</ul";
-				}
-				$sl++;
-			}
-		?> */
 		?>
 	</div>
 	<script src="js/jquery-3.3.1.js"></script>		

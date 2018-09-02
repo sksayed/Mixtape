@@ -128,37 +128,37 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		.error {color: #FF0000;}
+		.error {color: #FF0000;  }
 	</style>
 </head>
 <body align="center">
-	<h2> Create playlist </h2>
+	<h2 style="color: white;"> Create playlist </h2>
 	<form method = "POST" action="">
-	playlist Name :	<input type="text" name="pname" value="<?php echo $name;?>"> <span class="error"> <?php echo $nameErr;?></span>
+	Playlist Name :	<input type="text" name="pname" value="<?php echo $name;?>"> <input type="submit" name="submitb" value="Done Creating Playlist"><span class="error"> <?php echo $nameErr;?></span>
 	 <?php
 	 //require ("dbconnection.php");
 	 $song_resultset = all_songs_resultset () ;
-	 echo "<h3> List of songs </h3>  " ;
+	 echo "<h3 style='color: white;'> List of songs </h3>  " ;
 	  $x =1 ;
 	 
      ?>
-     <table align="center">
+     <table align="center" style='background-color:#AD79D3;width: 100%;'>
      	<th>
-     		<b>serial</b>
+     		<b>Serial</b>
      	</th>
      	<th>
-     		<b>songs</b>
+     		<b>Songs</b>
      	</th>
      	<th>
-     		check 
+     		<b>Check</b> 
      	</th>
 
      <?php
    	
 	 while ($songs = mysqli_fetch_assoc($song_resultset) ) {
 	 	# code...
-	 	echo "<tr>" ;
-	 	echo "<td>";
+	 	echo "<tr style='background-color:#DBC9E8'>" ;
+	 	echo "<td >";
 	 	echo $x ;
 	 	echo "</td>";
 	 
@@ -177,8 +177,6 @@
 	 }
 
      ?>
-
-     	
      </table>
      <table align="center">
      	<tr>
@@ -188,7 +186,7 @@
      		</td>
      	</tr>
     </table>
-     <input type="submit" name="submitb" >
+  
 	</form>
 
 </body>
