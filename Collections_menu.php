@@ -59,7 +59,7 @@
             while ($row = mysqli_fetch_assoc( $playlist) )
           {
            # code...
-        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a></li>";
+        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]."</a> <h6 align='right'>created:".$row["create_time"]."</h6></li>";
         $sl++ ;
        } // for loop ses 
        echo "</ul>";

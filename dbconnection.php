@@ -201,7 +201,7 @@ if (!$conn)
     function allplaylist()
     {
       global $conn;
-      $query="SELECT * FROM `playlist`";
+      $query="SELECT * FROM `playlist` ORDER BY `playlist_id` DESC";
       $result=mysqli_query($conn,$query);
       return $result;
     }

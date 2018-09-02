@@ -24,8 +24,8 @@ session_start() ; // session start hoise karon validation korbo
 	<title></title>
 	<style type="text/css">
 		.pl {
-            background-color: #eee;
-            color: #444;
+            background-color: #A669DA;
+            color: #FFFFFF;
             padding: 18px;
             width: 90%;
             border: none;
@@ -37,7 +37,7 @@ session_start() ; // session start hoise karon validation korbo
             text-decoration: none;
         }
         .pl:hover {
-            background-color: #ccc; 
+            background-color: #B4A3C2; 
         }
         .plst{
             list-style-type: none;
@@ -61,7 +61,7 @@ session_start() ; // session start hoise karon validation korbo
           while ($row = mysqli_fetch_assoc( $playlist) )
           {
            # code...
-        echo "<li class='pl' align='left'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]." </a><a href='Delete_pl.php?sl=".$row["playlist_id"]."'><img src='uploads/delete.png' height=2% width =3%></img></a><a href='Manage_playlist.php?sl=".$row["playlist_id"]."'><img src='uploads/manage.png' height=2% width =3%></img></a></li>";
+        echo "<li class='pl' align='left'><div><div align='left' style='float:left;'><a href='Playlist_viewing.php?serial=".$row["playlist_id"]."'style='text-decoration: none;'>".$sl.") ".$row["playlist_name"]." </a></div><div align='right'><a href='Delete_pl.php?sl=".$row["playlist_id"]."'><img src='uploads/delete.png' height=1% width =2%></img></a></div><div align='right'><a href='Manage_playlist.php?sl=".$row["playlist_id"]."'><img src='uploads/manage.png' height=1% width =2%></img></a></div><div class='fb-like' data-href='http://localhost/WebTech%20Project%20Final%20v2/Playlist_viewing.php?serial=".$row["playlist_id"]." data-layout='standard' data-action='like' data-size='small' data-show-faces='false' data-share='true'></div></div></li>";
         $sl++ ;
        } // for loop ses 
        echo "</ul>";
@@ -81,31 +81,13 @@ session_start() ; // session start hoise karon validation korbo
 	echo "</ul>";
     */
 ?>
-<script type="text/javascript">
-/*
-  function update(val ) {
-    if (val =="")
-    {
-      alert("no values found") ;
-    }
-    else
-    {
-
-      var xmlhttp = XMLHttpRequest () ;
-      xmlhttp.onreadystatechange = function ()
-      {
-        if (this.readyState == 4 && this.status == 200 )
-        {
-
-        }
-      };
-
-      xmlhttp.open ("GET" , "pl_hits.php?p="+val,true);
-      xmlhttp.send ();
-
-    }
-  }
-  */
-</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
