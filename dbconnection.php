@@ -231,13 +231,7 @@ if (!$conn)
 
     }
 
-    function update_user_id ($user_id , $update_user_id)
-    {
-      global $conn ;
-      $query="UPDATE `user` SET `user_id` = '".$update_user_id."' WHERE `user`.`user_id` = '".$user_id."';";
-      $result=mysqli_query($conn,$query);
-
-    }
+    
     function update_user_name ($user_id , $update_user_name)
     {
       global $conn ;
@@ -260,7 +254,7 @@ if (!$conn)
       $result=mysqli_query($conn,$query);
       if ($result == true )
       {
-        echo " updated" ;
+        echo "updated" ;
       }
       else
       {
