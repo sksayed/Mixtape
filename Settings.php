@@ -184,7 +184,7 @@
                         
                         <tr>
                             <td>
-                                <h3>Name</h3>
+                                <h3>Name:</h3>
                             </td>
                             <td>
                                 <h4><?php $name = all_values_of_a_user($_SESSION["userName"]); echo $name["name"]; ?></h4>
@@ -222,7 +222,7 @@
                     -->
                         <tr>
                             <td>
-                                <h3>Email</h3>
+                                <h3>Email:</h3>
                             </td>
                             <td>
                                 <h4><?php $name = all_values_of_a_user($_SESSION["userName"]); echo $name["email"]; ?></h4>
