@@ -9,7 +9,7 @@
    }
    else
    {
-	   header("location:MainMenu.php");
+	   header("location:Signup.php");
    }
 ?>
 
