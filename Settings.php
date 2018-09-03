@@ -56,7 +56,7 @@
             xHttp.send();
                 }
             }
-
+                /*
             function submituid( )
             {
                 var str =document.getElementById("edituid").value ;
@@ -90,22 +90,21 @@
                 }
 
 
-            }
+            }*/
             function checkEmail( str) {
 
+                    var x = str ;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+       // alert("Not a valid e-mail address");
+        return true;
+    }
+     else
+     {
+        return false ;
+     }
 
-             var x= str ;
-             //alert(str);  
-var atposition=x.indexOf("@");  
-var dotposition=x.lastIndexOf(".");  
-if (atposition<1 || dotposition<atposition+2 ){  
- // alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-  return true;  
-  } 
-  else
-  {
-    return  false ;
-  } 
     
                      }
 
@@ -134,7 +133,9 @@ if (atposition<1 || dotposition<atposition+2 ){
                     document.getElementById("emailErr").innerHTML=" field is empty";
 
                 }
-                 else if( !validateEmail(str)  ) {
+                else
+                {
+                  if( checkEmail(str)  ) {
 
                     document.getElementById("emailErr").innerHTML="email is invalid ";
 
@@ -143,21 +144,24 @@ if (atposition<1 || dotposition<atposition+2 ){
 
                 else
                 {
+                   // alert(str);
                     var xHttp=new XMLHttpRequest();
             xHttp.onreadystatechange=function() {
                 if(this.readyState==4 && this.status==200)
                 {
+                    //alert("ekhane asche ");
                     document.getElementById("emailErr").innerHTML=this.responseText;
                     //document.getElementById("sug").style.display="block";
                     //document.getElementById("here").innerHTML=this.responseText;
                     location.href="Settings.php";
                 }
             };
-            xHttp.open("GET","edit_email_of_a_user.php?q="+str,true);
+            xHttp.open("GET","update_email_of_a_user.php?q="+str,true);
             xHttp.send();
                 }
+            }
 
-
+  
 
 
 
@@ -180,7 +184,7 @@ if (atposition<1 || dotposition<atposition+2 ){
                         
                         <tr>
                             <td>
-                                <h3>Name</h3>
+                                <h3>Name:</h3>
                             </td>
                             <td>
                                 <h4><?php $name = all_values_of_a_user($_SESSION["userName"]); echo $name["name"]; ?></h4>
@@ -218,7 +222,7 @@ if (atposition<1 || dotposition<atposition+2 ){
                     -->
                         <tr>
                             <td>
-                                <h3>Email</h3>
+                                <h3>Email:</h3>
                             </td>
                             <td>
                                 <h4><?php $name = all_values_of_a_user($_SESSION["userName"]); echo $name["email"]; ?></h4>
@@ -233,12 +237,13 @@ if (atposition<1 || dotposition<atposition+2 ){
                                 <span id="emailErr"></span>
                             </td>
                         </tr>
-                        <tr>
+
+                      <!--  <tr>
                             <td>
                                 <h3>Date Of Birth</h3>
                             </td>
                             <td>
-                                <h4><?php $name = all_values_of_a_user($_SESSION["userName"]); echo $name["dob"]; ?></h4>
+                                
                             </td>
                             <td>
                                 <input type="text" id="editdob">
@@ -250,7 +255,7 @@ if (atposition<1 || dotposition<atposition+2 ){
                                 <span id="dobErr"></span>
                             </td>
                         </tr>
-                        
+                        -->
                     </table>
                 </td>
 			  </tr>
