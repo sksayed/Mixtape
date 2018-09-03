@@ -104,9 +104,10 @@ if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 		 }
 		 else
 		 {
-			 $_SESSION["userName"] = $uname ;
-			 $_SESSION["user_id"] = $uname ; // etai asol , user id sob jai gai kaje lagabo , bujhtew easy hbe , username confusion create kore 
 
+			 $_SESSION["userName"] = $uname ;
+			 $_SESSION["user_id"] = $uname ; 
+			 
 			 header("location:home.php");
 		 }
 	 }
@@ -141,7 +142,6 @@ if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
 			<nav>
 				<ul id="navibar1">
 					<li><a href="Collections_menu.php"><h2>Collections</h2></a></li>
-					<li><a href="Playlist_menu.php"><h2>Playlists</h2></a></li>
 					<li><a href="Trending_menu.php"><h2>Trending</h2></a></li>
 				</ul>
 			</nav>

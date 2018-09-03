@@ -16,17 +16,17 @@
 			            while ($row = mysqli_fetch_assoc( $playlist) )
         			  {
 						echo 
-					"<tr align='center' height=2%>
+					"<tr align='center' height=8%>
 					    <td rowspan='3'><img href='Playlist_viewing.php?serial=".$row['playlist_id']."'src='asset/Pictures/album1.jpg' alt='".$row['playlist_name']."' height=100% width=100%></td>
-					    <td rowspan='2'><a style='text-decoration:none;color:white;' href='Playlist_viewing.php?serial=".$row['playlist_id']."'><h3>".$row['playlist_name']."</h3></a></td>
-				    <td><img src='asset/Pictures/Rec_options.png' alt='Options' height=50% width=50%></td>
+					    <td rowspan='2'><a style='text-decoration:none;color:white;' onclick=parent.framechange('Recommended.php','Playlist_viewing.php?serial=".$row['playlist_id']."')><h3>".$row['playlist_name']."</h3></a></td>
+				    <td></td>
 				    </tr>
-					<tr align='center' height=2%>
-					    <td><img src='asset/Pictures/Rec_fav.png' alt='Favourite' height=50% width=50%></td>
+					<tr align='center' height=8%>
+					    <td></td>
 					</tr>
-					<tr align='center' height=2%>
+					<tr align='center' height=8%>
 					    <td>".$row['user_id']."</td>
-					    <td><img src='asset/Pictures/Rec_nil.png' alt='Put Song Next In-line' height=50% width=50%></td>
+					    <td></td>
 					</tr>";
 					$sl++ ;
 						}
