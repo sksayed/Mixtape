@@ -1,7 +1,7 @@
 <?php
 require("dbconnection.php");
 $sl=$_GET['serial'];
-echo $sl ;
+//echo $sl ;
 $checkboxErr="";
 $all_true = false ;
 if (isset($_POST["submitb"]) && $_SERVER["REQUEST_METHOD"] == "POST" )
