@@ -62,7 +62,7 @@ if (!$conn)
 		global $conn ;
 
 		$query = "INSERT INTO `song` (`song_id`, `song_name`, `song_path`) VALUES (NULL, \"".$song_name."\", \"".$song_path."\"); " ;
-		echo $query ;
+		//echo $query ;
 		if (mysqli_query($conn, $query)) 
 		{
     		//echo "New record created successfully";
